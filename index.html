@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='content-type' content='text/html'	charset="utf-8">
+	<meta name="viewport" content="width=device-width" />
+    <title>Brownian motion</title>
+    <link rel="stylesheet" href="styles\style.css" type='text/css'>
+</head>
+<body>
+    <div id='wrapper' class='wrapper'>
+		
+		<div id='header' class='header'>
+			<p class='header__text'>Модель Броуновского движения</p>
+		</div>
+		
+		<div id='section' class='section'>
+			<div id='state' class='state'>
+				<div id='state__container' class='state__container'>
+					<div id='state__gas' class='states'>
+						<p class='state__head2'>Молекулы газа</p>
+						
+						<div class='state__inputs'>
+							<p class='state__state2'>
+								<label for='input-select-gas'>Газ</label></br>
+								<select id='input-select-gas' class='state__input-data state__input-data_select'>
+									<option>Аргон</option>
+									<option>Водород</option>
+									<option>Гелий</option>
+									<option>Кислород</option>
+									<option>Неон</option>
+								</select>
+							</p>
+							
+							<p class='state__state2'>
+								<label for='input-number-gas'>Колличество</label></br>
+								<input id='input-number-gas' type='number' class='state__input-data state__input-data_input' req>
+							</p>
+							
+							<p class='state__state2'>
+								<label for='input-temperature-gas'>Температура (<sup>0</sup>C)</label></br>
+								<input id='input-temperature-gas' type='number' class='state__input-data state__input-data_input' req>
+							</p>
+						</div>
+					</div>
+					
+					<div id='state__br' class='states'>
+						<p class='state__head2'>Броуновские частицы</p>
+						
+						<div class='state__inputs'>
+							<p class='state__state2'>
+								<label for='input-number-br'>Колличество</label></br>
+								<input id='input-number-br' type='number' class='state__input-data state__input-data_input' req>
+							</p>
+							
+							<p class='state__state2'>
+								<label for='input-size-br'>Размер (нм)</label></br>
+								<input id='input-size-br' type='number' class='state__input-data state__input-data_input' req>
+							</p>
+							
+							<p class='state__state2'>
+								<label for='input-weight-br'>Масса (а.е.м.)</label></br>
+								<input id='input-weight-br' type='number' class='state__input-data state__input-data_input' req>
+							</p>
+							
+							<p class='state__state2'>
+								<label for='input-speed-br'>Начальная скорость (м/с)</label></br>
+								<input id='input-speed-br' type='number' class='state__input-data state__input-data_input' required>
+							</p>
+						</div>
+					</div>
+					
+					<div id='state__other' class='states'>
+						<p class='state__head2'>Настройки</p>
+						
+						<div class='state__inputs'>
+							<p class='state__state2'>
+								<label for='input-coofSpeedGas'>Коэф. скорости газа</label></br>
+								<input id='input-coofSpeedGas' type='number' class='state__input-data state__input-data_other' required>
+								<label for='input-coofSpeedGas'>^</label>
+								<input id='input-coofSpeedGasDeg' type='number' class='state__input-data state__input-data_other' required>
+							</p>
+							
+							<p class='state__state2'>
+								<label for='input-coofSizeGas'>Коэф. размера молекул газа</label></br>
+								<input id='input-coofSizeGas' type='number' class='state__input-data state__input-data_other' required>
+								<label for='input-coofSizeGas'>^</label>
+								<input id='input-coofSizeGasDeg' type='number' class='state__input-data state__input-data_other' required>
+							</p>
+							
+							<p class='state__state2'>
+								<label for='input-deltaS'>Погрешность вычислений</label></br>
+								<input id='input-deltaS' type='number' class='state__input-data state__input-data_other' required>
+								<label for='input-deltaS'>^</label>
+								<input id='input-deltaSDeg' type='number' class='state__input-data state__input-data_other' required>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id='screen' class='screen'>
+			
+				<div id='screen__canvas' class='screen__canvas'>
+					<canvas id='main-canvas'></canvas>
+					<button id='btn-fullscreen' class='screen__button-fullscreen'></button>
+				</div>
+				
+				<div  id='screen__buttons' class='screen__buttons'>
+					<button id='screen_btn-begin' class='screen__button'>Запуск</button>
+					<button id='screen_btn-stop' class='screen__button'>Стоп</button>
+					<button id='screen_btn-continue' class='screen__button'>Продолжить</button>
+					<button id='screen_btn-clear' class='screen__button'>Очистить</button>
+				</div>
+				
+				<div id='screen__message' class='screen__message'>
+					<p id='message' class='screen__message-text'></p>
+				</div>
+			</div>
+		</div>	
+	</div>
+</body>
+	<script src='scripts\screen-size.js'></script>
+	<!--<script src='scripts\motion-model.js'></script>-->
+	<script src='scripts\engine.js'></script>
+	<script src='scripts\main_Brown.js'></script>
+</html>
